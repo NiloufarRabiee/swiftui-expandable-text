@@ -50,9 +50,13 @@ public struct ExpandableText: View {
                     toggleExpansion()
                 }
                 .buttonStyle(.plain)
-                .accessibilityValue(isExpanded ? "Expanded" : "Collapsed")
+                .accessibilityValue(Text(isExpanded ? "Expanded" : "Collapsed"))
                 .accessibilityHint(
-                    isExpanded ? "Collapses the full text" : "Shows the full text"
+                    Text(
+                        isExpanded
+                            ? "Collapses the full text"
+                            : "Shows the full text"
+                    )
                 )
             }
         }
